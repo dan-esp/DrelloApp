@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  box-sizing: content-box;
+  overflow: hidden;
+}
+
+:root {
+  --main-color: #6405D0;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,46 @@
+header {
+    display: flex;
+    font-family: sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 10px 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-ctn {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.logo-ctn h1 {
+    color: black;
+    font-size: 20px;
+}
+
+.logo {
+    padding-top: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 10px;
+}
+
+.link-login {
+    color: black;
+    font-weight: bold;
+}
+
+.link-register {
+    color: white;
+    font-weight: bold;
+    background-color: var(--main-color);
+    padding: 20px 15px;
+}
