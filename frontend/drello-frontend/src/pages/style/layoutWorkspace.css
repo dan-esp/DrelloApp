@@ -1,0 +1,85 @@
+#workspace-layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#workspace-layout-header {
+  display: grid;
+  width: 100%;
+  grid-template-areas: "logo-ctn board-bar board-bar search-ctn search-ctn user-ctn";
+  padding: 0 10px 10px 10px;
+  box-sizing: border-box;
+  border-bottom: 4px solid #f0eff1;
+}
+
+#workspace-layout-content {
+  display: flex;
+  flex-grow: 1;
+  box-sizing: content-box;
+}
+
+.searchBar {
+  grid-area: search-ctn;
+  width: 100% !important;
+  align-self: center;
+}
+
+.profile-card {
+  grid-area: user-ctn;
+  align-self: center;
+  justify-self: flex-end;
+  margin-right: 40px;
+}
+
+.logo-ctn {
+  grid-area: logo-ctn;
+  align-self: center;
+}
+
+.dashboard-info {
+  grid-area: board-bar;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.all-boards-btn {
+  cursor: pointer;
+  padding: 15px 10px;
+  align-self: center;
+  display: block;
+  background-color: var(--gray-color);
+  outline: none;
+  border: none;
+  border-radius: 4px;
+}
+
+.all-boards-btn i {
+  font-size: 15px;
+}
+
+.workspace-ctn {
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 20px 150px 40px 150px;
+  flex-direction: column;
+}
+
+.workspace-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0px;
+}
+
+.workspace-content {
+  flex-grow: 1;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}

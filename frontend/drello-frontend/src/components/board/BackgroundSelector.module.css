@@ -1,0 +1,76 @@
+.selectorContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 15px;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  position: absolute;
+  left: 25.5rem;
+  top: 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+}
+
+.title {
+  text-align: center;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(2, 50px);
+  justify-content: center;
+  align-content: center;
+  gap: 4px;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.itemColor1 {
+  background-color: blue;
+}
+
+.itemColor2 {
+  background-color: skyblue;
+}
+
+.itemColor3 {
+  background-color: green;
+}
+
+.itemColor4 {
+  background-color: greenyellow;
+}
+
+.itemColor5 {
+  background-color: palevioletred;
+}
+
+.itemColor6 {
+  background-color: black;
+}
+
+
+.upload_image{
+  display: flex;
+  justify-content: center;
+}
+
+
+.upload_image input{
+  display: none;
+}
+
+
+.go_back{
+  cursor: pointer;
+  position: absolute;
+  top: 10px;  
+}

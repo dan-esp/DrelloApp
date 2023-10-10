@@ -1,0 +1,28 @@
+.modal_font {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.modal_ctn {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-sizing: content-box;
+  position: relative;
+}
+.modal_content {
+  width: 100%;
+  height: 100%;
+}
+
+.modal_header {
+  position: absolute;
+  right: 8px;
+}

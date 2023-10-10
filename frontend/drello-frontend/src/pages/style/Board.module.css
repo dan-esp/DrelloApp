@@ -1,0 +1,35 @@
+.board_content {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "board_options" "board_lists";
+  grid-template-columns: 1fr;
+  gap: 10px;
+  grid-template-rows: min-content 1fr;
+  margin-top: 10px;
+}
+
+.board_options {
+  grid-area: board_options;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.board_options_privacy {
+  display: flex;
+  gap: 5px;
+  box-sizing: content-box;
+}
+
+.board_lists {
+  grid-area: board_lists;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  box-sizing: content-box;
+  padding: 0 20px;
+  overflow: auto;
+}
+

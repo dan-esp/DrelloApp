@@ -1,0 +1,113 @@
+.boardCreator {
+  padding: 20px;
+  width: 340px;
+  height: 350px;
+  display: grid;
+  grid-template-columns: 75px 75px 75px 75px;
+  grid-template-rows: 150px 80px 40px 40px;
+  grid-template-areas:
+    "img img img img"
+    "title title title title"
+    "cover cover visibility visibility"
+    ". . create create";
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.createButton {
+  grid-area: create;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.titleInput {
+  grid-area: title;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 20px 10px;
+  outline: none;
+}
+
+.coverButton {
+  text-align: center;
+  display: block;
+  grid-area: cover;
+  text-decoration: none;
+  background-color: #e0e0e0;
+  border-radius: 7px;
+  justify-self: start;
+  color: Gray;
+  padding: 10px 0;
+  width: 150px;
+}
+
+.visibilityButton {
+  text-align: center;
+  display: block;
+  grid-area: visibility;
+  text-decoration: none;
+  background-color: #e0e0e0;
+  border-radius: 7px;
+  padding: 10px 0;
+  width: 150px;
+  color: Gray;
+  justify-self: end;
+}
+
+.boardImage {
+  width: 340px;
+  height: 150px;
+  grid-area: img;
+  border-radius: 7px;
+  background-size: cover;
+  display: grid;
+  justify-content: center;
+}
+
+.boardImageCenter {
+  width: 340px;
+  height: 150px;
+}
+
+.scheme {
+  width: 300px;
+  height: 150px;
+  opacity: 0.8;
+  background-image: url("/schema.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.tooltip {
+  display: inline-block;
+  position: absolute;
+  left: 40px;
+  top: 160px;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 73%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(243, 48, 48) transparent transparent transparent;
+}
+
+.tooltiptext {
+  user-select: none;
+  background-color: rgb(243, 48, 48);
+  border-radius: 12px;
+  color: white;
+  padding: 5px 10px;
+}
+
