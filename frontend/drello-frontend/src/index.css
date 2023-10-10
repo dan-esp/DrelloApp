@@ -1,14 +1,25 @@
+* {
+  font-family: sans-serif;
+  box-sizing: content-box;
+}
 body {
   margin: 0;
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
-  box-sizing: content-box;
-  overflow: hidden;
+}
+#root {
+  min-height: 100vh;
 }
 
 :root {
-  --main-color: #6405D0;
+  --main-color: #6405d0;
+  --gray-color: #dfdfdf;
+  --speed: 0.3s;
+  --material-bg-first: white;
+  --shadow-bg-first: rgba(0, 0, 0, 0.24) 0px 7px 29px 0px;
+  --shadow-bg-second: rgba(95, 94, 94, 0.24) 0px 7px 29px 0px;
+  
 }
 
 a {

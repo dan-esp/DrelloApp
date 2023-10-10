@@ -63,4 +63,8 @@ public class UserEntity implements UserDetails {
         return true;
     }
 
+    public Member toMember() {
+        return new Member(id, username, email, profileUrl);
+    }
+
 }

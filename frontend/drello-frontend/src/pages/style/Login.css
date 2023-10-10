@@ -1,7 +1,7 @@
 .background {
     width: 430px;
     height: 520px;
-    position: absolute;
+    position: fixed;
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
@@ -11,7 +11,7 @@
 .background .shape {
     height: 500px;
     width: 500px;
-    position: absolute;
+    position: fixed;
     border-radius: 50%;
     z-index: 100;
 }
@@ -63,7 +63,6 @@ form * {
     justify-self: center;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
 }
 
 .wrapper h1 {

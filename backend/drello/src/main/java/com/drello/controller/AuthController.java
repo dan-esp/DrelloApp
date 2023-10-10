@@ -32,4 +32,13 @@ public class AuthController {
         AuthResponse authResponse = authService.register(signUpRequest);
         return ResponseEntity.ok(authResponse);
     }
+
+    @PostMapping("/verify-token")
+    public ResponseEntity<AuthResponse> verifyToken(@RequestBody TokenRequest tokenRequest) {
+        AuthResponse authResponse = authService.loginByToken(tokenRequest.token);
+        return ResponseEntity.ok(authResponse);
+    }
+
+    public record TokenRequest(String token) {
+    }
 }

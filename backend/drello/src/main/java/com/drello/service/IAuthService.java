@@ -11,4 +11,6 @@ public interface IAuthService {
     AuthResponse login(LoginRequest loginRequest);
 
     AuthResponse register(SignUpRequest signUpRequest);
+
+    AuthResponse loginByToken(String token);
 }

@@ -1,0 +1,43 @@
+.boardCard {
+  width: 243px;
+  height: 243px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 12px;
+  box-shadow: var(--shadow-bg-second);
+  user-select: none;
+  cursor: pointer;
+}
+
+.image {
+  height: 130px;
+  border-radius: 8px;
+  background-size: cover;
+}
+
+.scheme {
+  width: 243px;
+  height: 130px;
+  opacity: 0.8;
+  background-image: url("/schema.png");
+  background-size: cover;
+}
+
+.title {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-family: Noto Sans;
+  font-size: 16px;
+  font-style: normal;
+  padding: 10px 0;
+  height: 30px;
+}
+
+.members {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+}

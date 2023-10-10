@@ -1,5 +1,7 @@
 package com.drello.controller.records;
 
-public record AuthResponse(String token) {
+import com.drello.model.Member;
+
+public record AuthResponse(String token, Member user) {
 
 }

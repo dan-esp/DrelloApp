@@ -4,18 +4,28 @@ import NoPage from "../pages/NoPage";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-
+import { AuthProvider } from "../context/AuthContext";
+import Workspace from "../pages/Workspace";
+import {LayoutWorkspace} from "../pages/LayuotWorkspace";
+import Board from "../pages/Board";
 function AppRouter() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-        </Route>
-        <Route path="login" index element={<Login />} />
-        <Route path="register" index element={<Register />}/>
-        <Route path="*" element={<NoPage />} />
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route element={<Home />} />
+          </Route>
+          
+          <Route element={<LayoutWorkspace />}>
+            <Route path="/workspace" element={<Workspace />} />
+            <Route path="/workspace/:boardId" element={<Board />} />
+          </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 }

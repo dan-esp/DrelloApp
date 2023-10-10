@@ -1,0 +1,6 @@
+    <div className="user">
+          <span className="username">{state?.username}</span>
+          <button className="btn-logout" onClick={onLogout}>
+            Logout
+          </button>
+        </div>
