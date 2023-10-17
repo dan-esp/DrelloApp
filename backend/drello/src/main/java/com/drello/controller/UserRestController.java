@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.drello.model.UserEntity;
 import com.drello.service.IUserService;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 
@@ -46,6 +47,14 @@ public class UserRestController {
     @DeleteMapping("/{id}")
     public UserEntity deleteUserData(@PathVariable String id) {
         return userService.delete(id);
+    }
+
+
+     @GetMapping("/search/{partial}")
+    public List<UserEntity> getMatchUsers(@PathVariable String partial) {
+        List<UserEntity> users = userService.getUsersWithPartialUsernameOrEmail(partial);
+        System.out.println(users);
+        return users;
     }
 
 }

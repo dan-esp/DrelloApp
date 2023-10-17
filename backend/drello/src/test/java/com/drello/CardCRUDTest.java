@@ -27,7 +27,7 @@ public class CardCRUDTest {
 
     @Test
     public void saveCardTest() {
-        Card card = new Card("title", "description", "listId", "listTitle", "imageCover");
+        Card card = new Card("title", "description", "imageCover");
         card.getAttachments().add(new Attachment("attachment", "file to test"));
         Card savedCard = cardService.save(card);
         String id = savedCard.getId();

@@ -94,4 +94,19 @@ public class ListService implements IListService {
         update.push("cards").atPosition(postition).value(card);
         return mongoUtil.execQuery();
     }
+
+    @Override
+    public boolean updateCard(String listId, String cardId, CardItem card) {
+        ListCard listCard  =findById(listId);    
+        int index = 0;
+        for (int i = 0; i < listCard.getCards().size(); i++) {
+            if (listCard.getCards().get(i).getCardId().equals(cardId)) {
+                index = i;
+                break;
+            }
+        }
+        listCard.getCards().add(index, card);
+        listRepository.save(listCard);
+        return  mongoUtil.execQuery();
+    }
 }

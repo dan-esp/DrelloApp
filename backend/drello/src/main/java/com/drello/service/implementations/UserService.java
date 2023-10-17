@@ -1,5 +1,7 @@
 package com.drello.service.implementations;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -8,6 +10,7 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import com.drello.exceptions.EntityNotFoundException;
+import com.drello.model.Member;
 import com.drello.model.UserEntity;
 import com.drello.repository.UserRepository;
 import com.drello.service.IUserService;
@@ -59,8 +62,16 @@ public class UserService implements IUserService {
         Update update = new Update().push("boards", boardId);
 
         mongoTemplate.updateFirst(query, update, UserEntity.class);
-        
+
         return true;
+    }
+
+    @Override
+    public List<UserEntity> getUsersWithPartialUsernameOrEmail(String partialValue) {
+        Criteria criteria = new Criteria().orOperator(Criteria.where("username").regex(".*" + partialValue + ".*", "i"),
+                Criteria.where("email").regex(".*" + partialValue + ".*", "i"));
+        Query query = new Query(criteria);
+        return mongoTemplate.find(query, UserEntity.class);
     }
 
 }

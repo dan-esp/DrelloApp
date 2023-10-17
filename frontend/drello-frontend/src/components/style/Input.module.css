@@ -4,16 +4,16 @@
 .add_list_btn {
   outline: none;
   border: none;
-  color: var(--main-color);
   border-radius: 5px;
   font-size: 15px;
   min-width: 250px;
-  padding: 5px;
+  padding: 10px 10px;
   height: fit-content;
   display: flex;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.315);
   box-shadow: var(--shadow-bg-first);
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -26,8 +26,12 @@
   box-shadow: var(--shadow-bg-first);
   border-radius: 5px;
   padding: 5px;
-  position: sticky;
+  position: absolute;
 }
+
+
+
+
 
 .input input {
   outline: none;
@@ -36,16 +40,16 @@
   font-size: 15px;
 }
 
+
 .add_list_btns button {
   display: inline-block;
   margin: 3px;
 }
 
-
 .input.active {
   opacity: 1;
   visibility: visible;
-  transform: translateY(-27px);
+  transform: translateY(-40px);
   transition: var(--speed) ease;
 }
 
@@ -54,4 +58,41 @@
   visibility: hidden;
   transform: translateY(-50px);
   transition: var(--speed) ease;
+}
+
+.add_card_btn {
+  outline: none;
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-bg-first);
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.add_card_btn i {
+  margin-right: 10px;
+}
+
+.add_card_btn:hover {
+  background-color: #acacac7c;
+  color: white;
+}
+
+.add_card_input {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: white;
+  box-shadow: var(--shadow-bg-first);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.add_card_input input {
+  outline: none;
+  border: none;
 }

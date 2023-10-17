@@ -16,6 +16,7 @@
   border-radius: 10px;
   box-sizing: content-box;
   position: relative;
+  transition: height 0.2s ease;
 }
 .modal_content {
   width: 100%;

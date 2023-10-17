@@ -1,20 +1,33 @@
 import Button from "../components/Button";
 import BoardCard from "../components/board/BoardCard";
 import useModal from "../hook/useModal";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Modal from "../components/Modal";
 import BoardCardCreation from "../components/board/BoardCardCreation";
 import { saveBoard, getBoards } from "../request/boardRequest";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useWorkspace } from "./LayuotWorkspace";
+import { averageColor } from "../service/ColotPicker";
 
 function Workspace() {
   const [isModalOpen, handleOpenModal, handleCloseModal] = useModal(false);
   const [boards, setBoards] = useState([]);
   const { user } = useAuth();
-  const { currentBoard, handleCurrentBoard } = useWorkspace();
+  const { currentBoard, handleCurrentBoard, handleAvailableBoards } =
+    useWorkspace();
+
   const navigate = useNavigate();
+
+   useEffect(() => {
+     const fetchBoards = async () => {
+       const result = await getBoards(user.userId);
+       setBoards(result.data);
+     };
+
+     fetchBoards();
+   }, []);
+
   const createBoard = async (newBoard) => {
     if (newBoard.title === "") {
       throw "Title cannot be empty";
@@ -36,17 +49,9 @@ function Workspace() {
     const result = await saveBoard(objt);
     newBoard = result.data;
     setBoards([...boards, newBoard]);
-  };
+  }
 
-  useEffect(() => {
-    const fetchBoards = async () => {
-      const result = await getBoards(user.userId);
-      console.log(result);
-      setBoards(result.data);
-    };
-
-    fetchBoards();
-  }, []);
+ 
 
   const openBoard = (title) => {
     const selectedBoard = boards.find((el) => {
@@ -54,11 +59,16 @@ function Workspace() {
         return el;
       }
     });
+    var rgb = averageColor(selectedBoard.id);
 
-    handleCurrentBoard({
-      id: selectedBoard.id,
-      name: selectedBoard.title,
-    });
+    console.log(rgb);
+    selectedBoard.headerColor = {
+      rgb: rgb,
+      rgbColor: `rgb(${rgb.r},${rgb.g},${rgb.b})`,
+    };
+
+    handleCurrentBoard(selectedBoard);
+    handleAvailableBoards(boards);
 
     navigate(`/workspace/${selectedBoard.title}`, {
       replace: true,

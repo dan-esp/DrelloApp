@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.drello.controller.records.board.BoardRequest;
+
 import com.drello.model.Board;
 import com.drello.model.UserEntity;
 import com.drello.model.UserRole;

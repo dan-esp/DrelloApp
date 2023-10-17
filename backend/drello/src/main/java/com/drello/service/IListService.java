@@ -24,4 +24,6 @@ public interface IListService {
 
     boolean setCard(String listId, CardItem card, Integer position);
 
+    boolean updateCard(String listId, String cardId, CardItem card);
+
 }

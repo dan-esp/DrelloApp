@@ -2,10 +2,8 @@
   width: 100%;
   display: grid;
   grid-template-areas: "board_options" "board_lists";
-  grid-template-columns: 1fr;
   gap: 10px;
   grid-template-rows: min-content 1fr;
-  margin-top: 10px;
 }
 
 .board_options {
@@ -15,7 +13,8 @@
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 5px 20px;
+  backdrop-filter: blur(5px);
 }
 .board_options_privacy {
   display: flex;
@@ -24,12 +23,13 @@
 }
 
 .board_lists {
+  max-height: 100%;
   grid-area: board_lists;
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  padding: 10px 20px;
   box-sizing: content-box;
-  padding: 0 20px;
   overflow: auto;
+  position: -ms-page;
 }
-

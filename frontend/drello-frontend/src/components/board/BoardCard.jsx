@@ -5,10 +5,15 @@ function BoardCard({ title, boardForm, onclick }) {
   };
   return (
     <div className={boardCardStyle.boardCard} onClick={handleOnClick}>
-      <div
-        style={{ backgroundImage: `url(${boardForm.imgUrl})` }}
-        className={boardCardStyle.image}
-      >
+      <div className={boardCardStyle.imageContainer}>
+        <img
+          src={boardForm.imgUrl}
+          alt={boardForm.title}
+          className={boardCardStyle.image}
+          id={boardForm.id}
+          crossOrigin="anonymous"
+          loading="lazy"
+        />
         <div className={boardCardStyle.scheme}></div>
       </div>
 

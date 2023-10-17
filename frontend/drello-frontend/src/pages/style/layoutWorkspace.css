@@ -1,28 +1,46 @@
 #workspace-layout {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+}
+h1 {
+  margin: 0;
 }
 
 #workspace-layout-header {
   display: grid;
   width: 100%;
+  height: 50px;
   grid-template-areas: "logo-ctn board-bar board-bar search-ctn search-ctn user-ctn";
-  padding: 0 10px 10px 10px;
-  box-sizing: border-box;
-  border-bottom: 4px solid #f0eff1;
+  grid-template-rows: repeat(50px);
+
+  box-sizing: content-box;
+  border-bottom: 1px solid #adadad4f;
+  background-color: rgba(255, 255, 255, 0.685);
+  align-items: center;
 }
 
 #workspace-layout-content {
   display: flex;
-  flex-grow: 1;
+  height: calc(100vh - 50px);
   box-sizing: content-box;
 }
 
 .searchBar {
   grid-area: search-ctn;
-  width: 100% !important;
+  width: 30% !important;
   align-self: center;
+  justify-self: end;
+  transition: width 0.5s ease;
+}
+.searchBar.unfolded {
+  width: 30% !important;
+}
+
+.searchBar.folded {
+  width: 100% !important;
 }
 
 .profile-card {
@@ -32,9 +50,17 @@
   margin-right: 40px;
 }
 
+.logo-ctn img {
+  padding-top: 0;
+}
+
 .logo-ctn {
   grid-area: logo-ctn;
   align-self: center;
+  width: min-content;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
 }
 
 .dashboard-info {
@@ -42,11 +68,16 @@
   display: flex;
   flex-direction: row;
   gap: 3rem;
+  align-items: center;
+}
+
+h4 {
+  margin: 0;
 }
 
 .all-boards-btn {
   cursor: pointer;
-  padding: 15px 10px;
+  padding: 10px;
   align-self: center;
   display: block;
   background-color: var(--gray-color);

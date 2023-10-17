@@ -3,7 +3,7 @@ import DropDownItem from "./DropDownItem";
 import { useAuth } from "../context/AuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-function ProfileCard() {
+function ProfileCard({ color }) {
   const [open, setOpen] = useState(false);
   const { user } = useAuth();
   const { logout } = useAuth();
@@ -28,7 +28,6 @@ function ProfileCard() {
   }, []);
 
   const onOpen = () => {
-    console.log("clicked");
     setOpen(!open);
   };
 
@@ -43,9 +42,11 @@ function ProfileCard() {
     <>
       <div className="profile-card" onClick={onOpen} ref={profileRef}>
         <img src={user.imageUrl} alt="user" className="profile-card-image" />
-        <p className="profile-card-username">{user.username}</p>
+        <p className="profile-card-username" style={{ color: color }}>
+          {user.username}
+        </p>
         <a className="profile-card-button">
-          <i className={`fa-solid fa-caret-${open ? "up" : "down"}`}></i>
+          <i className={`fa-solid fa-caret-${open ? "up" : "down"}`}  style={{ color: color }}></i>
         </a>
       </div>
       <div

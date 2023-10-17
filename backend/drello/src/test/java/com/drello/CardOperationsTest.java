@@ -38,8 +38,7 @@ public class CardOperationsTest {
                 "https://example.com/author02.zip");
 
         // Card 1: Product Page
-        Card card1 = new Card("Product Page Design", "Design the product page for our e-commerce website", "List 1 ID",
-                "To-Do", "product-page.jpg");
+        Card card1 = new Card("Product Page Design", "Design the product page for our e-commerce website", "product-page.jpg");
         card1.setId("651843b189709f17866d096e");
 
         card1.getComments().add(
@@ -50,8 +49,7 @@ public class CardOperationsTest {
         card1.getLabels().add(new Label("Urgent", "red"));
 
         // Card 2: Shopping Cart Functionality
-        Card card2 = new Card("Shopping Cart Functionality", "Implement shopping cart functionality for our website",
-                "List 1 ID", "To-Do", "shopping-cart.jpg");
+        Card card2 = new Card("Shopping Cart Functionality", "Implement shopping cart functionality for our website", "shopping-cart.jpg");
         card2.getComments()
                 .add(new Comment("Developer", member02,
                         "6518434f6d8c88126acf8bb6"));
@@ -62,8 +60,7 @@ public class CardOperationsTest {
 
         card2.setId("6518434f6d8c88126acf8bb6");
         // Card 3: Marketing Campaign
-        Card card3 = new Card("Marketing Campaign", "Plan and execute a marketing campaign for the new product launch",
-                "List 2 ID", "In Progress", "marketing-campaign.jpg");
+        Card card3 = new Card("Marketing Campaign", "Plan and execute a marketing campaign for the new product launch","marketing-campaign.jpg");
         card3.setId("651843c13c7ba1032e82901a");
 
         card3.getComments().add(new Comment("Marketing Manager", member01,

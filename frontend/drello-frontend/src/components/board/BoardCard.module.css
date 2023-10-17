@@ -13,8 +13,13 @@
 
 .image {
   height: 130px;
+  width: 100%;
   border-radius: 8px;
   background-size: cover;
+}
+
+.imageContainer{
+  position: relative;
 }
 
 .scheme {
@@ -23,6 +28,8 @@
   opacity: 0.8;
   background-image: url("/schema.png");
   background-size: cover;
+  position: absolute;
+  top: 0;
 }
 
 .title {
@@ -41,3 +48,5 @@
   flex-direction: row;
   height: 40px;
 }
+
+
